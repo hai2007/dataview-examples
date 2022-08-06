@@ -1,0 +1,19 @@
+.fork {
+    user-select: none;
+    position: fixed;
+    transform: rotate(45deg);
+    line-height: 1.6em;
+    font-size: 14px;
+    transform-origin: 150px 23px;
+    text-align: center;
+    font-family: sans-serif;
+    display: inline-block;
+    top: 60px;
+    right: -77px;
+    width: 300px;
+    background-color: #3661a7;
+    outline: 4px solid #3661a7;
+    border: 2px dashed #ffffff;
+    color: #ffffff;
+    z-index: 9999;
+}

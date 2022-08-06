@@ -1,0 +1,144 @@
+<!-- 左1 -->
+<ui-border-1 :left="_width*0.01" :top="_height*0.1" :width="_width*0.24" :height="_height*0.29">
+    <text :x="_width*0.13" :y="_height*0.1+30" align="center" fill-color="white">
+        行业分布
+    </text>
+    <ui-bar :x="_width*0.01+20" :y="_height*0.1" :width="_width*0.24" :height="_height*0.29" ruler-color="white"
+        item-ratio="0.4" data='[24,232,424,124,113,45,222]' ruler='["保险业","电讯业","服装业","公益组织","因特网","医疗服务","旅游业"]'
+        colors="['#3089d0']" />
+</ui-border-1>
+
+<!-- 左2 -->
+<ui-border-1 :left="_width*0.01" :top="_height*0.4" :width="_width*0.24" :height="_height*0.29">
+    <text :x="_width*0.13" :y="_height*0.4+30" align="center" fill-color="white">
+        城市分布
+    </text>
+    <ui-bar :x="_width*0.01+20" :y="_height*0.4" :width="_width*0.24" :height="_height*0.29" ruler-color="white"
+        item-ratio="0.4" data='[124,232,324,24,113,45,222,234,33,34,130,90]'
+        ruler='["北京","上海","南京","重庆","深圳","杭州","天津","广州","台北","合肥","重庆","嘉兴"]' colors="['#67ce8e']" />
+</ui-border-1>
+
+<!-- 左3 -->
+<ui-border-1 :left="_width*0.01" :top="_height*0.7" :width="_width*0.24" :height="_height*0.29">
+
+    <text :x="_width*0.05" :y="_height*0.7+30" align="center" fill-color="white">
+        金融行业
+    </text>
+    <ui-pie :cx="_width*0.05" :cy="_height*0.8" :radius="_width*0.025" :inner-radius="_width*0.018" label-show="false"
+        border-show="false" data="[{value:10},{value:30},{value:20}]" colors="['#0c59ac','#3382ac','#ff59ac']"></ui-pie>
+    <rect :x="_width*0.03" :y="_height*0.875" :width="_width*0.005" :height="_width*0.005" fill-color="#0c59ac">
+        <text :x="_width*0.033+10" :y="_height*0.87+_width*0.005" fill-color="white" font-size="12">
+            银行
+        </text>
+    </rect>
+    <rect :x="_width*0.03" :y="_height*0.905" :width="_width*0.005" :height="_width*0.005" fill-color="#3382ac">
+        <text :x="_width*0.033+10" :y="_height*0.9+_width*0.005" fill-color="white" font-size="12">
+            证劵&股票
+        </text>
+    </rect>
+    <rect :x="_width*0.03" :y="_height*0.935" :width="_width*0.005" :height="_width*0.005" fill-color="#ff59ac">
+        <text :x="_width*0.033+10" :y="_height*0.93+_width*0.005" fill-color="white" font-size="12">
+            保险
+        </text>
+    </rect>
+
+    <text :x="_width*0.13" :y="_height*0.7+30" align="center" fill-color="white">
+        旅游业
+    </text>
+    <ui-pie :cx="_width*0.13" :cy="_height*0.8" :radius="_width*0.025" :inner-radius="_width*0.018" label-show="false"
+        border-show="false" data="[{value:90},{value:30},{value:120}]" colors="['#0c59ac','#3382ac','#ff59ac']">
+    </ui-pie>
+    <rect :x="_width*0.11" :y="_height*0.875" :width="_width*0.005" :height="_width*0.005" fill-color="#0c59ac">
+        <text :x="_width*0.113+10" :y="_height*0.87+_width*0.005" fill-color="white" font-size="12">
+            大山
+        </text>
+    </rect>
+    <rect :x="_width*0.11" :y="_height*0.905" :width="_width*0.005" :height="_width*0.005" fill-color="#3382ac">
+        <text :x="_width*0.113+10" :y="_height*0.9+_width*0.005" fill-color="white" font-size="12">
+            人造景区
+        </text>
+    </rect>
+    <rect :x="_width*0.11" :y="_height*0.935" :width="_width*0.005" :height="_width*0.005" fill-color="#ff59ac">
+        <text :x="_width*0.113+10" :y="_height*0.93+_width*0.005" fill-color="white" font-size="12">
+            其它
+        </text>
+    </rect>
+
+    <text :x="_width*0.21" :y="_height*0.7+30" align="center" fill-color="white">
+        水果行业
+    </text>
+    <ui-pie :cx="_width*0.21" :cy="_height*0.8" :radius="_width*0.025" :inner-radius="_width*0.018" label-show="false"
+        border-show="false" data="[{value:10},{value:130},{value:20}]" colors="['#0c59ac','#3382ac','#ff59ac']">
+    </ui-pie>
+    <rect :x="_width*0.19" :y="_height*0.875" :width="_width*0.005" :height="_width*0.005" fill-color="#0c59ac">
+        <text :x="_width*0.193+10" :y="_height*0.87+_width*0.005" fill-color="white" font-size="12">
+            榴莲
+        </text>
+    </rect>
+    <rect :x="_width*0.19" :y="_height*0.905" :width="_width*0.005" :height="_width*0.005" fill-color="#3382ac">
+        <text :x="_width*0.193+10" :y="_height*0.9+_width*0.005" fill-color="white" font-size="12">
+            苹果&橘子
+        </text>
+    </rect>
+    <rect :x="_width*0.19" :y="_height*0.935" :width="_width*0.005" :height="_width*0.005" fill-color="#ff59ac">
+        <text :x="_width*0.193+10" :y="_height*0.93+_width*0.005" fill-color="white" font-size="12">
+            蔬菜类
+        </text>
+    </rect>
+
+</ui-border-1>
+
+<!-- 右1 -->
+<ui-border-1 :left="_width*0.75" :top="_height*0.1" :width="_width*0.24" :height="_height*0.29">
+    <text :x="_width*0.87" :y="_height*0.1+30" align="center" fill-color="white">
+        前三行业四季度销售情况
+    </text>
+    <ui-line :x="_width*0.75" :y="_height*0.1" :width="_width*0.24" :height="_height*0.29" is-interpolation="true"
+        data="[[19,22,32,44],[9,27,13,19],[19,7,15,11]]" ruler="['一季度','二季度','三季度','四季度']" ruler-color="white" size="2">
+    </ui-line>
+</ui-border-1>
+
+<!-- 右2 -->
+<ui-border-1 :left="_width*0.75" :top="_height*0.4" :width="_width*0.24" :height="_height*0.29">
+    <text :x="_width*0.87" :y="_height*0.4+30" align="center" fill-color="white">
+        各行业增长情况
+    </text>
+    <ui-bar :x="_width*0.75+20" :y="_height*0.4+15" :width="_width*0.24" :height="_height*0.29" item-ratio="0.4"
+        ruler-color="white" data='[124,32,224,124,113,145,22]' ruler='["保险业","电讯业","服装业","公益组织","因特网","医疗服务","旅游业"]'
+        colors="['#3089d0']" />
+</ui-border-1>
+
+<!-- 右3 -->
+<ui-border-1 :left="_width*0.75" :top="_height*0.7" :width="_width*0.24" :height="_height*0.29">
+    <text :x="_width*0.87" :y="_height*0.7+30" align="center" fill-color="white">
+        资金发布情况
+    </text>
+    <ui-radar :indicator='indicator' :data='data' :cx='_width*0.87' :cy='_height*0.86' :radius='_height*0.1'
+        label-color='white' />
+</ui-border-1>
+
+<!-- 标题 -->
+<ui-title left="0" top="0" :width="_width" :height="_height*0.1">
+    全国企业大数据
+</ui-title>
+
+<!-- 中间&地图 -->
+<ui-border-2 :left="_width*0.26" :top="_height*0.1" :width="_width*0.48" :height="_height*0.16">
+
+    <text :x="_width*0.38" :y="_height*0.17" align="center" fill-color="white" font-size="50" font-family="fantasy">
+        45757242
+    </text>
+    <text :x="_width*0.38" :y="_height*0.23" align="center" fill-color="gray" font-size="20" font-family="fantasy">
+        企业总数量
+    </text>
+
+    <text :x="_width*0.62" :y="_height*0.17" align="center" fill-color="white" font-size="50" font-family="fantasy">
+        68323
+    </text>
+    <text :x="_width*0.62" :y="_height*0.23" align="center" fill-color="gray" font-size="20" font-family="fantasy">
+        新增企业总数
+    </text>
+
+</ui-border-2>
+<ui-map :geo-json='chianMap' :cy="_height*0.75" fill-color='#4d5ffc' stroke-color='#394ee9' font-color='white'
+    :width="_width*0.5" />

@@ -1,0 +1,11 @@
+.view {
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    position: fixed;
+    background-image: url('./image/pic3.png'), url('./image/pic1.png'), url('./image/pic2.jpg');
+    background-size: auto 50%, auto 40%, cover;
+    background-position: center 75%, center 70%, center;
+    background-repeat: no-repeat;
+}
