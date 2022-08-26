@@ -1,58 +1,58 @@
 /******/
-/******/  // EtcPack Bootstrap/******/  
-/******/  // （ https://etcpack.github.io/api/ ）/******/  
-/******/  /******/  
-/******/  // 记录bundle的函数源码/******/  
-/******/  window.__etcpack__bundleSrc__ = {};/******/  
-/******/  /******/  
-/******/  // 记录bundle的运行结果/******/  
-/******/  window.__etcpack__bundleObj__ = {};/******/  
-/******/  /******/  
-/******/  // 获取bundle结果/******/  
-/******/  window.__etcpack__getBundle = function (bundleName) {/******/  
-/******/  /******/  
-/******/      // 一个bundle只有第一次导入的时候需要执行/******/  
-/******/      if (!(bundleName in window.__etcpack__bundleObj__)) {/******/  
-/******/          window.__etcpack__bundleObj__[bundleName] = window.__etcpack__bundleSrc__[bundleName]();/******/  
-/******/      }/******/  
-/******/  /******/  
-/******/      // 返回需要的bundle的结果/******/  
-/******/      return window.__etcpack__bundleObj__[bundleName];/******/  
-/******/  }/******/  
-/******/  /******/  
-/******/  window.__etcpack__bundleFile__ = {};/******/  
-/******/  /******/  
-/******/  // 获取懒加载bundle结果/******/  
-/******/  window.__etcpack__getLazyBundle = function (fileName, bundleName) {/******/  
-/******/      return new Promise(function (resolve) {/******/  
-/******/  /******/  
-/******/          // 如果加载过了/******/  
-/******/          if (window.__etcpack__bundleFile__[fileName]) {/******/  
-/******/              resolve(window.__etcpack__getBundle(bundleName));/******/  
-/******/              return;/******/  
-/******/          }/******/  
-/******/  /******/  
-/******/          // 获取head标签/******/  
-/******/          var head = document.getElementsByTagName('head')[0];/******/  
-/******/  /******/  
-/******/          // 创建script/******/  
-/******/          var script = document.createElement('script');/******/  
-/******/  /******/  
-/******/          // 设置属性/******/  
-/******/          script.src = fileName;/******/  
-/******/  /******/  
-/******/          // 追加到页面/******/  
-/******/          head.appendChild(script);/******/  
-/******/  /******/  
-/******/          window.__etcpack__bundleFile__[fileName] = true;/******/  
-/******/  /******/  
-/******/          script.addEventListener('load', function () {/******/  
-/******/              resolve(window.__etcpack__getBundle(bundleName));/******/  
-/******/          }, false);/******/  
-/******/  /******/  
-/******/  /******/  
-/******/      });/******/  
-/******/  }/******/  
+/******/  // EtcPack Bootstrap
+/******/  // （ https://etcpack.github.io/api/ ）
+/******/  
+/******/  // 记录bundle的函数源码
+/******/  window.__etcpack__bundleSrc__ = {};
+/******/  
+/******/  // 记录bundle的运行结果
+/******/  window.__etcpack__bundleObj__ = {};
+/******/  
+/******/  // 获取bundle结果
+/******/  window.__etcpack__getBundle = function (bundleName) {
+/******/  
+/******/      // 一个bundle只有第一次导入的时候需要执行
+/******/      if (!(bundleName in window.__etcpack__bundleObj__)) {
+/******/          window.__etcpack__bundleObj__[bundleName] = window.__etcpack__bundleSrc__[bundleName]();
+/******/      }
+/******/  
+/******/      // 返回需要的bundle的结果
+/******/      return window.__etcpack__bundleObj__[bundleName];
+/******/  }
+/******/  
+/******/  window.__etcpack__bundleFile__ = {};
+/******/  
+/******/  // 获取懒加载bundle结果
+/******/  window.__etcpack__getLazyBundle = function (fileName, bundleName) {
+/******/      return new Promise(function (resolve) {
+/******/  
+/******/          // 如果加载过了
+/******/          if (window.__etcpack__bundleFile__[fileName]) {
+/******/              resolve(window.__etcpack__getBundle(bundleName));
+/******/              return;
+/******/          }
+/******/  
+/******/          // 获取head标签
+/******/          var head = document.getElementsByTagName('head')[0];
+/******/  
+/******/          // 创建script
+/******/          var script = document.createElement('script');
+/******/  
+/******/          // 设置属性
+/******/          script.src = fileName;
+/******/  
+/******/          // 追加到页面
+/******/          head.appendChild(script);
+/******/  
+/******/          window.__etcpack__bundleFile__[fileName] = true;
+/******/  
+/******/          script.addEventListener('load', function () {
+/******/              resolve(window.__etcpack__getBundle(bundleName));
+/******/          }, false);
+/******/  
+/******/  
+/******/      });
+/******/  }
 /******/  
 /************************************************************************/
 /******/
@@ -2768,16 +2768,16 @@ __etcpack__scope_args__=window.__etcpack__getBundle('19');
 var AppComponent =__etcpack__scope_args__.default;
  // 指令
 
-__etcpack__scope_args__=window.__etcpack__getBundle('26');
+__etcpack__scope_args__=window.__etcpack__getBundle('27');
 var uiBind =__etcpack__scope_args__.default;
 
-__etcpack__scope_args__=window.__etcpack__getBundle('27');
+__etcpack__scope_args__=window.__etcpack__getBundle('28');
 var uiModel =__etcpack__scope_args__.default;
 
-__etcpack__scope_args__=window.__etcpack__getBundle('29');
+__etcpack__scope_args__=window.__etcpack__getBundle('30');
 var uiOn =__etcpack__scope_args__.default;
 
-__etcpack__scope_args__=window.__etcpack__getBundle('30');
+__etcpack__scope_args__=window.__etcpack__getBundle('31');
 var uiLazy =__etcpack__scope_args__.default;
 
 
@@ -2943,10 +2943,13 @@ window.__etcpack__bundleSrc__['23']=function(){
     var __etcpack__scope_args__;
     __etcpack__scope_bundle__.default= {
   "menu": function menu() {
-    return window.__etcpack__getLazyBundle('./build/main@v0.1.0-bundle1.js','24');
+    return window.__etcpack__getLazyBundle('./build/main@v0.1.1-bundle1.js','24');
   },
   "page-1": function page1() {
-    return window.__etcpack__getLazyBundle('./build/main@v0.1.0-bundle2.js','25');
+    return window.__etcpack__getLazyBundle('./build/main@v0.1.1-bundle2.js','25');
+  },
+  "page-2": function page2() {
+    return window.__etcpack__getLazyBundle('./build/main@v0.1.1-bundle3.js','26');
   }
 };
   
@@ -2956,7 +2959,7 @@ window.__etcpack__bundleSrc__['23']=function(){
 /*************************** [bundle] ****************************/
 // Original file:./node_modules/sprout-ui/nefbl/directive/ui-bind.ts
 /*****************************************************************/
-window.__etcpack__bundleSrc__['26']=function(){
+window.__etcpack__bundleSrc__['27']=function(){
     var __etcpack__scope_bundle__={};
     var __etcpack__scope_args__;
     var _dec, _class2;
@@ -3018,7 +3021,7 @@ __etcpack__scope_bundle__.default=_class;
 /*************************** [bundle] ****************************/
 // Original file:./node_modules/sprout-ui/nefbl/directive/ui-model.ts
 /*****************************************************************/
-window.__etcpack__bundleSrc__['27']=function(){
+window.__etcpack__bundleSrc__['28']=function(){
     var __etcpack__scope_bundle__={};
     var __etcpack__scope_args__;
     var _dec, _class2;
@@ -3033,7 +3036,7 @@ __etcpack__scope_args__=window.__etcpack__getBundle('1');
 var Directive=__etcpack__scope_args__.Directive;
 var setValue=__etcpack__scope_args__.setValue;
 
-__etcpack__scope_args__=window.__etcpack__getBundle('28');
+__etcpack__scope_args__=window.__etcpack__getBundle('29');
 var xhtml =__etcpack__scope_args__.default;
 
 
@@ -3070,7 +3073,7 @@ __etcpack__scope_bundle__.default=_class;
 /*************************** [bundle] ****************************/
 // Original file:./node_modules/@hai2007/browser/xhtml.js
 /*****************************************************************/
-window.__etcpack__bundleSrc__['28']=function(){
+window.__etcpack__bundleSrc__['29']=function(){
     var __etcpack__scope_bundle__={};
     var __etcpack__scope_args__;
     /*!
@@ -3385,7 +3388,7 @@ __etcpack__scope_bundle__.default= {
 /*************************** [bundle] ****************************/
 // Original file:./node_modules/sprout-ui/nefbl/directive/ui-on.ts
 /*****************************************************************/
-window.__etcpack__bundleSrc__['29']=function(){
+window.__etcpack__bundleSrc__['30']=function(){
     var __etcpack__scope_bundle__={};
     var __etcpack__scope_args__;
     var _dec, _class2;
@@ -3399,7 +3402,7 @@ function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _d
 __etcpack__scope_args__=window.__etcpack__getBundle('1');
 var Directive=__etcpack__scope_args__.Directive;
 
-__etcpack__scope_args__=window.__etcpack__getBundle('28');
+__etcpack__scope_args__=window.__etcpack__getBundle('29');
 var xhtml =__etcpack__scope_args__.default;
 
 /**
@@ -3454,7 +3457,7 @@ __etcpack__scope_bundle__.default=_class;
 /*************************** [bundle] ****************************/
 // Original file:./node_modules/sprout-ui/nefbl/directive/ui-lazy.ts
 /*****************************************************************/
-window.__etcpack__bundleSrc__['30']=function(){
+window.__etcpack__bundleSrc__['31']=function(){
     var __etcpack__scope_bundle__={};
     var __etcpack__scope_args__;
     var _dec, _class2;

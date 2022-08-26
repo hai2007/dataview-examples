@@ -27,6 +27,7 @@ header {
             display: inline-block;
             margin: 20px 10px;
             cursor: pointer;
+            position: relative;
 
             &:hover {
                 text-decoration: underline;
@@ -50,11 +51,41 @@ header {
                     font-size: 12px;
                     padding-top: 5px;
                 }
+
+                &.tel {
+                    position: absolute;
+                    top: 5px;
+                    right: 5px;
+                    background-color: rgb(255, 255, 255);
+                    width: auto;
+                    height: 20px;
+                    border-radius: 3px;
+                    pointer-events: visible;
+
+                    &>a {
+                        display: inline-block;
+                        width: 20px;
+                        height: 20px;
+                        background-size: auto 90%;
+                        background-repeat: no-repeat;
+                        background-position: center center;
+
+                        &.clunch {
+                            background-image: url('./image/clunch.png');
+                        }
+                    }
+                }
             }
 
             &[tag="page-1"] {
                 &>.icon {
                     background-image: url('./image/example-1.png');
+                }
+            }
+
+            &[tag="page-2"] {
+                &>.icon {
+                    background-image: url('./image/example-2.png');
                 }
             }
         }

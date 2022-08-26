@@ -1,0 +1,91 @@
+<!-- 标题 -->
+<ui-title left="0" top="0" :width="_width" :height="_height*0.1">
+    压力容器监管大屏
+</ui-title>
+
+<!-- 左1 -->
+<ui-border title="检测报告数据量前5名特检单位统计" :left="_width*0.01" :top="_height*0.14" :width="_width*0.24" :height="_height*0.25">
+    <ui-pie :cx="_width*0.13" :cy="_height*0.265" :radius='_height*0.07' border-show="false"
+        data="[{value:120,name:'类型1'},{value:90,name:'类型2'},{value:100,name:'类型3'},{value:170,name:'类型4'},{value:150,name:'类型5'}]" />
+</ui-border>
+
+<!-- 左2 -->
+<ui-border title="各检验单位的检验结论统计" :left="_width*0.01" :top="_height*0.44" :width="_width*0.24" :height="_height*0.25">
+    <ui-bar :x="_width*0.01+20" :y="_height*0.44" :width="_width*0.24" :height="_height*0.25" ruler-color="white"
+        item-ratio="0.7" bar-ratio="0.7" data='[[2665,2577,4606,6188,1089]]' ruler='["江苏省特检院"]' />
+</ui-border>
+
+<!-- 左3 -->
+<ui-border title="制造单位与检验结论情况分析" :left="_width*0.01" :top="_height*0.74" :width="_width*0.24" :height="_height*0.25">
+    <ui-bar :x="_width*0.01+20" :y="_height*0.74" :width="_width*0.24" :height="_height*0.25" ruler-color="white"
+        item-ratio="0.7" bar-ratio="0.7" data='[[1665,1577,3606,7188,1189]]' ruler='["江苏八一股份有限公司"]' />
+</ui-border>
+
+<!-- 右1 -->
+<ui-border title="总体体验结论统计" :left="_width*0.75" :top="_height*0.14" :width="_width*0.24" :height="_height*0.25">
+    <ui-bar :x="_width*0.75+20" :y="_height*0.14" :width="_width*0.24" :height="_height*0.25" ruler-color="white"
+        item-ratio="0.4" data='[24,232,424,124,113,45]' ruler='["1级","3级","5级","合格","修复后","使用"]' colors="['#236aa4']" />
+</ui-border>
+
+<!-- 右2 -->
+<ui-border title="各容器种类的检验结论统计" :left="_width*0.75" :top="_height*0.44" :width="_width*0.24" :height="_height*0.25">
+    <ui-radar :indicator='right2Data.indicator' :data='right2Data.data' :cx='_width*0.87' :cy='_height*0.58'
+        :radius='_height*0.07' label-color='white' />
+</ui-border>
+
+<!-- 右3 -->
+<ui-border title="设置新增、报废统计" :left="_width*0.75" :top="_height*0.74" :width="_width*0.24" :height="_height*0.25">
+    <ui-process-wave :cx="_width*0.81" :cy="_height*0.87" :radius="_width*0.04" process='0.25' :deep='deep' />
+    <ui-process-wave :cx="_width*0.93" :cy="_height*0.87" :radius="_width*0.04" process='0.5' :deep='deep' />
+</ui-border>
+
+<!-- 低1 -->
+<ui-border title="制造日期、检验日期趋势分析" :left="_width*0.26" :top="_height*0.74" :width="_width*0.235" :height="_height*0.25">
+    <ui-line :x="_width*0.27" :y="_height*0.74" :width="_width*0.235" :height="_height*0.25" :data="bottom1Data"
+        ruler="['1994',' ','1999',' ','2003',' ','2007',' ','2011',' ']" ruler-color="white" size="2">
+    </ui-line>
+</ui-border>
+
+<!-- 低2 -->
+<ui-border title="检验类别的检验结论热力分布" :left="_width*0.505" :top="_height*0.74" :width="_width*0.235" :height="_height*0.25">
+
+    <!-- 横着的辅助线 -->
+    <path c-for="index in 5" stroke-color="gray">
+        <move-to :x="50+_width*0.515" :y="index*(_height*0.25-100)/5+50+_height*0.74"></move-to>
+        <line-to :x="_width*0.75-50" :y="index*(_height*0.25-100)/5+50+_height*0.74"></line-to>
+    </path>
+
+    <!-- 竖着的辅助线 -->
+    <path c-for="index in 5" stroke-color="gray">
+        <move-to :x="(index+1)*(_width*0.235-100)/5+50+_width*0.515" :y="50+_height*0.74"></move-to>
+        <line-to :x="(index+1)*(_width*0.235-100)/5+50+_width*0.515" :y="_height*0.99-50"></line-to>
+    </path>
+
+    <!-- 横刻度尺 -->
+    <ruler :x="50+_width*0.515" :y="_height*0.99-50" :length="_width*0.235-100"
+        value='["全面检验","安装检验","年度检验","委托检验","定期检验","耐压检验"]' color="white">
+    </ruler>
+
+    <!-- 纵刻度尺 -->
+    <ruler :x="50+_width*0.515" :y="_height*0.99-50" :length="_height*0.25 - 100"
+        value='["1级","3级","5级","合格","修复后","使用"]' mark-direction="left" direction="BT" color="white">
+    </ruler>
+
+    <!-- 散点 -->
+    <circle c-for="item in bottom2Data" :cx="(item[0]/15)*(_width*0.235-100)+50+_width*0.515"
+        :cy="(10-item[1])*0.1*(_height*0.25-100)+50+_height*0.74" :radius="item[2]+3"
+        :fill-color="item[2]>8?'#db4144':(item[2]>5?'#f8e631':'#81f1bc')"></circle>
+
+</ui-border>
+
+<!-- 地图 -->
+<ui-border title="使用单位地址所属城市检验报告数量发布" :left="_width*0.26" :top="_height*0.14" :width="_width*0.48"
+    :height="_height*0.55">
+    <ui-map :geo-json='JiangsuMap' :cy="_height*0.42" fill-color='#3285bd' stroke-color='#5cd1f9' font-color='#f8e631'
+        :width="_width*0.5" :height='_height*0.55' />
+</ui-border>
+
+<!-- 悬浮提示 -->
+<hover c-if='hover.show' :x="hover.x" :y="hover.y" :title="hover.title" _animation="quick" background="white">
+    <item c-for="item in hover.items" :content="item.value" :color="item.color"></item>
+</hover>

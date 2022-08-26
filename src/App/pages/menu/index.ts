@@ -10,10 +10,14 @@ import template from './index.html'
 export default class {
 
     openPage(event: Event) {
-        let btn = document.createElement('a')
-        btn.setAttribute('href', "#/" + ((<HTMLElement>event.target).getAttribute('tag')))
-        btn.setAttribute('target', '_blank')
-        btn.click()
+
+        let url = ((<HTMLElement>event.target).getAttribute('tag'))
+        if (url) {
+            let btn = document.createElement('a')
+            btn.setAttribute('href', "#/" + url)
+            btn.setAttribute('target', '_blank')
+            btn.click()
+        }
     }
 
 }

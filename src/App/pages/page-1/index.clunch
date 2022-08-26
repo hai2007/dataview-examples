@@ -142,3 +142,8 @@
 </ui-border-2>
 <ui-map :geo-json='chianMap' :cy="_height*0.75" fill-color='#4d5ffc' stroke-color='#394ee9' font-color='white'
     :width="_width*0.5" />
+
+<!-- 悬浮提示 -->
+<hover c-if='hover.show' :x="hover.x" :y="hover.y" :title="hover.title" _animation="quick" background="white">
+    <item c-for="item in hover.items" :content="item.value" :color="item.color"></item>
+</hover>
